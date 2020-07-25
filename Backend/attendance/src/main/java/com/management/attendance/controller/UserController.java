@@ -16,11 +16,11 @@ These apis should be available for only the owners of this application
 public class UserController {
 
     @Autowired
-    AdminUserService userService;
+    AdminUserService adminUserService;
 
     @GetMapping("/users")
     public ModelAndView getUsers(){
-        List<AdminUserDTO> userLists = userService.getUserList();
+        List<AdminUserDTO> userLists = adminUserService.getUserList();
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.addObject("listUsers",userLists);
         modelAndView.setViewName("list-users");
