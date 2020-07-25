@@ -22,29 +22,29 @@ These apis should be used by angular projects
 
 - Login Admin User  <http://localhost:8080/attendance/login>
 
-####Request for login
+#### Request for login
 
 {
     "username":"rohan",
     "password":"dsouza"
 }
 
-####Response for login
+#### Response for login
 
-#####If the username is not available in database
+##### If the username is not available in database
 {
     "code": "404",
     "message": "User not found in our database"
 }
 
-#####If username is available but password is incorrect
+##### If username is available but password is incorrect
 
 {
     "code": "401",
     "message": "Incorrect Password"
 }
 
-#####If username and password is correct
+##### If username and password is correct
 
 {
     "code": "0",
