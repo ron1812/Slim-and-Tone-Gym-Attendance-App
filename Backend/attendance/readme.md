@@ -20,7 +20,10 @@ These apis should only be available for the application owner
 
 These apis should be used by angular projects
 
-- Login Admin User  <http://localhost:8080/attendance/login>
+- Login Admin User  (POST) <http://localhost:8080/attendance/login>
+- Add Member        (POST) <http://localhost:8080/attendance/member>
+- Get Members       (GET)  <http://localhost:8080/attendance/member>
+- Get Member by Id  (GET)  <http://localhost:8080/attendance/member/{memberId}>
 
 #### Request for login
 
@@ -60,4 +63,4 @@ These apis should be used by angular projects
 
 
 
-###This project is owned by Rohan and Michael
+### This project is owned by Rohan and Michael
