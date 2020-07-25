@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ctomcat:
+    build:
+      context: .
+      dockerfile: ./docker/tomcat/Dockerfile
+    ports:
+      - "8080:8080"
+      - "18000:18000"
+    image: itomcat-attendance:1.0
+    env_file:
+      - ./config.env
+     
+  cpostgres:
+    build:
+      context: "./docker/postgres"
+    restart: always
+    image: ipostgres-attendance
+    ports:
+      - 5432:5432
