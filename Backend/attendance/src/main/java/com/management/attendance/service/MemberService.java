@@ -4,6 +4,8 @@ import com.management.attendance.dto.MemberDTO;
 import com.management.attendance.dto.PaginatedResponse;
 import com.management.attendance.dto.Response;
 import com.management.attendance.entity.Member;
+import com.management.attendance.exception.BadRequestException;
+import com.management.attendance.exception.NotFoundException;
 import com.management.attendance.repository.MemberRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,27 @@ public class MemberService {
         Optional<Member> memberEntity = memberRepository.findById(memberId);
         if(memberEntity.isPresent())
             return modelMapper.map(memberEntity.get(),MemberDTO.class);
-        return null;
+        throw new NotFoundException();
     }
+
+    public void deleteMemberById(Long memberId){
+        if (memberRepository.existsById(memberId)) {
+            memberRepository.deleteById(memberId);
+        }else{
+           throw new NotFoundException();
+        }
+    }
+
+    public void editMemberById(Long memberId,MemberDTO memberDTO) {
+        Optional<Member> memberEntity = memberRepository.findById(memberId);
+        if(memberEntity.isPresent()){
+            Member memberEntityToEdit = modelMapper.map(memberDTO, Member.class);
+            memberEntityToEdit.setId(memberId);
+            memberRepository.save(memberEntityToEdit);
+        }else{
+            throw new BadRequestException("400","There is no entry for the given memberId");
+        }
+    }
+
+
 }
