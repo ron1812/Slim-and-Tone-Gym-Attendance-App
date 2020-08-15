@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.management.attendance.entity.Member;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 public class MemberDTO {
 
@@ -16,6 +17,26 @@ public class MemberDTO {
     @NotEmpty
     private String lastName;
 
+    @NotEmpty
+    private String address;
+
+    private String contactNo;
+
+    private String alternateContactNo;
+
+    @NotEmpty
+    private String gender;
+
+    private String bloodGroup;
+
+    private String occupation;
+
+    private String emailId;
+
+    private String marriedStatus;
+
+    private Date dateOfBirth;
+
     public MemberDTO() {
     }
 
@@ -23,6 +44,15 @@ public class MemberDTO {
         this.firstName = member.getFirstName();
         this.lastName = member.getLastName();
         this.id=member.getId();
+        this.address=member.getAddress();
+        this.contactNo=member.getContactNo();
+        this.bloodGroup=member.getBloodGroup();
+        this.alternateContactNo=member.getAlternateContactNo();
+        this.dateOfBirth=member.getDateOfBirth();
+        this.gender=member.getGender();
+        this.emailId=member.getEmailId();
+        this.marriedStatus=member.getMarriedStatus();
+        this.occupation=member.getOccupation();
     }
 
     public long getId() {
@@ -47,5 +77,77 @@ public class MemberDTO {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    public String getAlternateContactNo() {
+        return alternateContactNo;
+    }
+
+    public void setAlternateContactNo(String alternateContactNo) {
+        this.alternateContactNo = alternateContactNo;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getMarriedStatus() {
+        return marriedStatus;
+    }
+
+    public void setMarriedStatus(String marriedStatus) {
+        this.marriedStatus = marriedStatus;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
