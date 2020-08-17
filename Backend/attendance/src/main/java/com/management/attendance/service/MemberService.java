@@ -39,6 +39,13 @@ public class MemberService {
                 , pageable.getPageSize(), memberDto.getTotalPages(),memberDto.getTotalElements()));
     }
 
+    public  List<MemberDTO> getMembersV2(Pageable pageable, String name){
+        Page<Member> memberEntity = memberRepository.findByName(name, pageable);
+        Page<MemberDTO> memberDto = memberEntity.map(MemberDTO::new);
+        memberDto.getContent().forEach(System.out::println);
+        return memberDto.getContent();
+    }
+
     public  MemberDTO getMemberById(Long memberId){
         Optional<Member> memberEntity = memberRepository.findById(memberId);
         if(memberEntity.isPresent())

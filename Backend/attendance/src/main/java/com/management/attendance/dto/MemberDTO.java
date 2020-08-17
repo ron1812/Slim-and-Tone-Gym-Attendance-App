@@ -150,4 +150,22 @@ public class MemberDTO {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "MemberDTO{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", contactNo='" + contactNo + '\'' +
+                ", alternateContactNo='" + alternateContactNo + '\'' +
+                ", gender='" + gender + '\'' +
+                ", bloodGroup='" + bloodGroup + '\'' +
+                ", occupation='" + occupation + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", marriedStatus='" + marriedStatus + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }

@@ -32,6 +32,14 @@ public class MemberController {
            return new ResponseEntity<>(memberService.getMembers(PaginationUtils.processPagination(pageIndex,pageSize),name.toLowerCase()),HttpStatus.OK);
     }
 
+    @GetMapping("/memberV2")
+    public ResponseEntity<List<MemberDTO>> getMembersV2(
+            @RequestParam(name = "pageIndex", required = false, defaultValue = "-1") int pageIndex,
+            @RequestParam(name = "pageSize", required = false, defaultValue = "-1") int pageSize,
+            @RequestParam(name = "name",defaultValue = "_", required = false) String name){
+        return new ResponseEntity<>(memberService.getMembersV2(PaginationUtils.processPagination(pageIndex,pageSize),name.toLowerCase()),HttpStatus.OK);
+    }
+
     @GetMapping("/member/{memberId}")
     public ResponseEntity<MemberDTO> getMember(@PathVariable(name = "memberId",required = true) Long memberId){
         return new ResponseEntity<>(memberService.getMemberById(memberId),HttpStatus.OK);
