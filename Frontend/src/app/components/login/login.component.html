@@ -1,0 +1,19 @@
+<div class="LoginPage">
+  <div class="title">
+    <h1>Login to Attendance Management System</h1>
+  </div>
+
+  <form method="post" (ngSubmit)="submit()">
+    <div class="imgcontainer">
+      <img src="https://scontent.fbom2-1.fna.fbcdn.net/v/t1.0-9/47243288_558559611235537_3049623030100656128_o.png?_nc_cat=108&_nc_sid=85a577&_nc_ohc=_U9-8mbs_V8AX8jcHdX&_nc_ht=scontent.fbom2-1.fna&oh=3005f1bbf04615be93ae1fc4be9c3104&oe=5F5DCF54" alt="Avatar" class="avatar">
+    </div>
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required  [(ngModel)]="user.username">
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="user.password">
+      <button type="submit">Login</button>
+    </div>
+  </form>
+
+</div>
