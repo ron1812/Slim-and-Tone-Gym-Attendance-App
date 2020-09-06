@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: ./docker/tomcat/Dockerfile
     ports:
-      - "8080:8080"
-      - "18000:18000"
+      - "8082:8080"
+      - "18001:18000"
     image: itomcat-attendance:1.0
     env_file:
       - ./config.env
@@ -17,4 +17,4 @@ services:
     restart: always
     image: ipostgres-attendance
     ports:
-      - 5432:5432
+      - 5431:5432
